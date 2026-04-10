@@ -1,0 +1,17 @@
+# Lean build artifacts
+.lake/
+build/
+lean-toolchain.path
+
+# Editor and OS files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+
+# Temporary files
+*.log
