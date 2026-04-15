@@ -2,7 +2,7 @@
 
 ## Version
 
-**Ver: 1.0.1**
+**Ver: 1.1.0**
 
 ## A Lean 4 Formalization of Uncertainty Propagation
 
@@ -26,15 +26,14 @@ This technique appears in my book *Excel Best Practices for Business* (Loren Abd
 
 The following theorems form the mathematical foundation of adding in quadrature. They are proven in the `Quadrature` namespace using real analysis and provide rigorous proofs of the core properties of uncertainty propagation.
 
-**uncertainty_sq**: Shows squaring the quadrature sum returns the sum of squares: `(√(δX² + δY²))² = δX² + δY²`. This validates that √(δX² + δY²) behaves as a proper magnitude.
-
-**linear_vs_quadrature**: Proves the quadrature sum is strictly less than the linear sum: `√(δX² + δY²) < δX + δY`. *This is the key theorem showing quadrature provides a conservative (safe) upper bound for combined uncertainty.*
-
-**uncertainty_mul**: For positive X, Y: removes absolute value in product uncertainty: `|X·Y|·√(δX²+δY²) = X·Y·√(δX²+δY²)`. This enables simplification of uncertainty expressions involving multiplication.
-
-**uncertainty_mul_exact**: For positive A and x: shows `|A·x| = A·x`. This proves the uncertainty in a scaled value equals the scale factor times the uncertainty in the original value.
-
-**uncertainty_power_two**: For positive x: shows `|x²| = x²`. This is the specific case of the power rule for squaring, showing the absolute value of x² equals x² when x > 0.
+| Theorem | Description |
+|---------|-------------|
+| `uncertainty_sq` | Shows `(√(δX² + δY²))² = δX² + δY²` — validates the quadrature formula |
+| `linear_vs_quadrature` | Proves `√(δX² + δY²) < δX + δY` — key inequality showing quadrature is a conservative upper bound |
+| `abs_pos_product` | For positive X, Y: `\|X·Y\| = X·Y` — removes absolute value in products |
+| `abs_pos_scalar` | For non-negative A and positive x: `\|A·x\| = A·x` — removes absolute value in scalar multiplication |
+| `uncertainty_product` | For q = X·Y: `(δq)² = (Y·δX)² + (X·δY)²` — true uncertainty multiplication formula |
+| `uncertainty_power` | For q = xⁿ: `(δq)² = (n·x^(n-1))² · (δx)²` — true uncertainty power rule |
 
 ## Applied Examples (Applied.lean)
 
@@ -128,16 +127,16 @@ In my mind, achieving this would greatly extend the reach of formalizing areas o
 ## Building
 
 ```bash
-cd Quadrature
+cd Quadrature_project
 lake build Quadrature
 ```
 
 ## Running Individual Files
 
 ```bash
-lake env lean Quadrature/Uncertainty.lean
-lake env lean Quadrature/Applied.lean
-lake env lean Quadrature/Basic.lean
+lake env lean Quadrature_project/Uncertainty.lean
+lake env lean Quadrature_project/Applied.lean
+lake env lean Quadrature_project/Basic.lean
 ```
 
 ## Additional Info
