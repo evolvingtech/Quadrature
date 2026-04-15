@@ -1,4 +1,9 @@
 # Adding in Quadrature
+
+## Version
+
+**Ver: 1.0.1**
+
 ## A Lean 4 Formalization of Uncertainty Propagation
 
 A Lean 4 formalization of uncertainty propagation via quadrature addition, demonstrating how to mathematically verify the "adding in quadrature" technique used in spreadsheet modeling.
