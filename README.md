@@ -2,7 +2,7 @@
 
 ## Version
 
-**Ver: 1.1.0**
+**Ver: 1.2.1**
 
 ## A Lean 4 Formalization of Uncertainty Propagation
 
